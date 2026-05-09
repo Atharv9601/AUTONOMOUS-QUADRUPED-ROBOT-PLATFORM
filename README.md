@@ -106,4 +106,12 @@ Mechanical structure:
 - Integrate **IMU + foot contact sensors** for stability experiments 🦿
 - Run **basic FEA** on leg segments to validate safety factors under dynamic loading 📊
 
-If you want, I can also generate a shorter GitHub description, issue templates, or a wiring table for the electronics.
+---
+
+## Author 👨‍💻
+
+**Atharv Nitin Agashe**  
+Mechanical Design Engineer · M.Sc. Mechatronics & Robotics  
+- Email: `atharvagashe962001@gmail.com`  
+- LinkedIn: [www.linkedin.com/in/atharv-agashe9601](https://www.linkedin.com/in/atharv-agashe9601)
+
