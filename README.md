@@ -1,68 +1,109 @@
-
 # 🤖 Autonomous Quadruped Robot Platform
 
-![CAD Design](renders/quadruped_render.png)
-
-> A fully designed autonomous quadruped robot platform developed as part of an M.Sc. Mechatronics & Robotics project,
-> focusing on multi-body mechanical design, joint kinematics, and structural integrity for legged locomotion.
+A modular, 3D‑printed **quadruped robot platform** designed from scratch to bridge **precision mechanical CAD** with **real-world mechatronic integration**.  
+This project focuses on *first‑time‑right* assembly, modular architecture, and design for manufacturability (DFMA). 
 
 ---
 
 ## 🎯 Aim
 
-The aim of this project is to design and develop a **mechanically robust quadruped (4-legged) robot platform**
-capable of stable locomotion over uneven terrain. The focus is on:
+> To design and engineer a **modular, multi‑legged robot** from scratch, combining high‑fidelity CAD modelling with practical electronics integration and prototyping.
 
-- Designing a lightweight yet rigid body frame suitable for dynamic walking gaits
-- Engineering leg assemblies with sufficient Degrees of Freedom (DOF) for natural motion
-- Creating a fully parametric CAD model ready for prototyping and manufacturing
-- Laying the mechanical foundation for future integration of sensors and autonomous control systems
-
----
-
-## 🛠️ Skills Demonstrated
-
-| Skill | Tool / Method |
-|---|---|
-| 3D CAD Modeling & Assembly | Siemens NX / Fusion 360 |
-| Multi-body mechanical design | Joint constraints, motion simulation |
-| Structural analysis | FEA-based stress evaluation on leg links |
-| Technical drawing generation | 2D engineering drawings with GD&T |
-| Design for Manufacturing (DfM) | Material selection, tolerance planning |
-| Kinematics & motion planning | Forward kinematics of 3-DOF leg structure |
-| Parametric modeling | Fully parametric design for easy iteration |
+Core goals:
+- Build a **mechanically robust** chassis and leg system suitable for 3D printing 🧩 
+- Ensure **zero‑shim, first‑time‑right assembly** via tolerance stack‑up analysis 📏
+- Design a layout that cleanly integrates **electronics, wiring, and power** without clashes 🔌 
+- Keep the platform **modular and scalable** for future control / gait experiments 🧠 
 
 ---
 
-## ⚙️ Components Used
+## 🧰 Tech Stack
 
-### Mechanical Structure
-- **Body Frame** — Lightweight aluminium/ABS structural chassis, designed for load distribution
-- **Leg Assembly (×4)** — Each leg consists of 3 rigid links: Coxa, Femur, and Tibia
-- **Joints** — 3 revolute joints per leg = **12 DOF total** across the platform
-- **End Effector (Foot)** — Curved foot tip designed for grip on irregular surfaces
-- **Fasteners & Brackets** — M3/M4 bolts, custom-designed mounting brackets
+### 🖥️ Software & CAD
 
-### Actuation (Design Provision)
-- **Servo Motor Mounts (×12)** — Designed to house standard hobby/industrial servo motors
-- **Servo Horn Interface** — Direct-drive coupling between servo output shaft and joint link
+- **Siemens NX** – structural components and refined assemblies
+- **CATIA V5** – precision part modeling, GD&T, and assembly checks 
+- **SolidWorks** – parametric modelling and alternative design iterations 
+- **Core methods**:  
+  - GD&T  
+  - DFMA  
+  - Tolerance stack‑up  
+  - 3D‑print‑oriented design 
+---
 
-### Electronics Provision (Structural Mounts Designed)
-- Mounting slots for **microcontroller board** (e.g., Raspberry Pi / STM32)
-- Cable routing channels integrated into frame design
-- Battery bay designed for center-of-mass optimization
+## 🔩 Hardware & Electronics
+
+- **Controller:** ESP32 microcontroller board ⚙️
+- **Actuators:** MG90S micro servo motors (multi‑joint leg actuation) 🦴
+- **Driver board:** PCA9685 16‑channel servo driver for coordinated leg control 🧠 
+- **Power stage:**
+  - MP1584 step‑down (buck) converter for regulated supply
+  - **2× 18650 Li‑ion cells** as the main battery pack 🔋
+
+Mechanical structure:
+- 3D‑printed chassis and leg segments optimised for **FDM printing** 🧱
+- Parametric part‑family models to scale the robot for different payloads 🧮
 
 ---
 
-## ✨ Key Features
+## 🧠 Skills Demonstrated
 
-- **12-DOF Leg Architecture** — 3 DOF per leg allows complex gait patterns including trot, crawl, and wave gait
-- **Symmetrical Body Design** — Balanced weight distribution for stable static and dynamic posture
-- **Modular Leg Assembly** — Each leg is independently detachable for maintenance and iterative redesign
-- **Parametric CAD Model** — All dimensions driven by parameters; easily scalable for different payload requirements
-- **DfM-Ready Design** — Designed with real manufacturing constraints in mind (3D printing + CNC machining)
-- **Center of Mass Optimization** — Battery and electronics bay positioned at geometric center to maximize stability
-- **Collision-Free Joint Range** — Joint travel limits designed to prevent self-collision during extreme poses
+### Mechanical & CAD 🛠️
+
+- Full CAD pipeline: from **concept sketch → 3D parts → assemblies → drawings** 
+- **Tolerance stack‑up analysis** to avoid binding / excessive play in joints 
+- **Parametric modelling** of leg and body segments for quick design changes 
+- **DFMA**: parts shaped and oriented for FDM printing, support‑minimised geometry
+
+### Mechatronics & Integration 🔌
+
+- Component selection and packaging for:
+  - ESP32
+  - PCA9685
+  - Servos
+  - MP1584
+  - Battery pack
+- Mechanical design of:
+  - **Mounting bosses** and brackets
+  - Cable routing paths
+  - Clearance zones for moving linkages 
+
+### Prototyping & Validation 🧪
+
+- Iterative 3D‑printed prototypes to verify:
+  - Fit and tolerance
+  - Servo range and link motion
+  - Structural behaviour under expected load 
+- Adjustments based on assembly feedback to improve robustness and ease of build 
 
 ---
 
+## ⭐ Key Features
+
+- **Zero‑shim assembly**  
+  Designed with proper tolerance stack‑up so the first build fits together without additional shimming or rework.
+
+- **Modular architecture**  
+  - Parametric chassis that can be resized for different payloads  
+  - Leg modules designed as repeatable units for 4‑leg (or extended) configurations. 
+
+- **DFMA‑driven 3D‑print design**  
+  - Parts oriented and shaped to print reliably on consumer FDM printers  
+  - Reduced supports, smart part splits, and consistent wall thicknesses.
+
+- **Electronics‑aware CAD**  
+  - Dedicated pockets and mounts for ESP32, PCA9685 and power electronics  
+  - Protected, planned cable paths to avoid interference with joints and ground clearance. 
+
+- **Future‑ready platform**  
+  Mechanical and electrical architecture built so control algorithms, gait generation, and sensing can be added later without redesigning the whole robot.
+
+---
+
+## 🚀 Next Steps / Possible Extensions
+
+- Add **inverse kinematics & gait control** on the ESP32 🎛️
+- Integrate **IMU + foot contact sensors** for stability experiments 🦿
+- Run **basic FEA** on leg segments to validate safety factors under dynamic loading 📊
+
+If you want, I can also generate a shorter GitHub description, issue templates, or a wiring table for the electronics.
